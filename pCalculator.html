@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+
+    <title>calculator</title>
+
+    <link rel="stylesheet" href="pCalculator.css">
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+
+</head>
+
+<body class="d">
+
+    <script src="nerdamer.core.js"></script>
+    <!-- LOAD ADD-ONS. These files contain extended functions. See documentation -->
+    <!-- again assuming you've saved the files in root -->
+    <script src="Algebra.js"></script>
+    <script src="Calculus.js"></script>
+    <script src="Solve.js"></script>
+    <script src="Extra.js"></script>
+
+    <script src="pCalculator.js"></script>
+
+    <button id="clearBtn" onclick="clearGraph()" style="display: none;">close</button>
+
+    <div id="plot-container">
+
+        <div id="plot"></div>
+
+        <button class="grapgButton" onclick="plot()">Plot</button>
+        <button class="grapgButton" onclick="zoomOut()">Zoom Out</button>
+        <button class="grapgButton" onclick="zoomIn()">Zoom In</button>
+
+
+
+    </div>
+
+
+
+    <div class="calculator-body">
+
+        <div class="nameSlot">
+            <pre class="michroma-regular">
+                <input class="js-modeShow modeShow" disabled placeholder="       Normal"></pre>
+
+        </div>
+
+
+        <div class="div2">
+            <div>
+                <input class="js-input b" disabled placeholder="0">
+            </div>
+
+            <div>
+                <button onclick="setModeVariableForMatrix()" class=" modeB">M</button>
+                <button onclick="setModeVariableForVector()" class=" modeB">
+                    V
+                </button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button onclick=" writeInDisplay('partfrac(') " class=" modeB">P</button>
+                <button onclick="setModeVariableForEquation()" class=" modeB">E</button>
+            </div>
+
+            <div>
+
+                <button onclick="getSomething()" class="smallButton r2">G</button>
+                <button onclick="SD()" class="smallButton">S~D</button>
+
+                <button id="toggleBtn" onclick="toggleGraph()" class="townhall">
+
+                </button>
+
+
+                <button ondblclick="handleDoubleClick('diff(')" onclick="handleSingleClick('integrate(')"
+                    class="smallButton">
+                    ∫dx
+                </button>
+
+                <button ondblclick="handleDoubleClick('x')" onclick="handleSingleClick('X')" class="smallButton"
+                    title="small x">
+                    X</button>
+                <p class="a">
+                    <!-- &nbsp; -->
+
+                </p>
+            </div>
+
+
+            <div>
+                <button onclick=" writeInDisplay('Y') " class="smallButton">Y</button>
+                <button onclick=" writeInDisplay('√(') " class="smallButton">√n</button>
+                <button onclick=" writeInDisplay('^2') " class="smallButton">x<sup>2</sup></button>
+                <button onclick=" writeInDisplay('^') " class="smallButton">x<sup>y</sup></button>
+                <button onclick=" writeInDisplay('log') " class="smallButton">log<sub>n</sub>X</button>
+
+                <button onclick=" writeInDisplay('ln(') " class="smallButton">ln</button>
+            </div>
+            <p class="a">
+                &nbsp;&nbsp;&nbsp;
+                a
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                b
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                abs
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                sin⁻¹
+                &nbsp;&nbsp;
+                cos⁻¹
+                &nbsp;&nbsp;&nbsp;
+                tan⁻¹
+            </p>
+            <div>
+                <button onclick=" writeInDisplay('A') " class="smallButton">A</button>
+                <button onclick=" writeInDisplay('B') " class="smallButton">B</button>
+
+                <button ondblclick="handleDoubleClick('abs(')" onclick="handleSingleClick('^-1')" class="smallButton">
+                    x<sup>-1</sup>
+                </button>
+
+                <button ondblclick="handleDoubleClick('sin^-1(')" onclick="handleSingleClick('sin(')"
+                    class="smallButton">
+                    sin
+                </button>
+
+                <button ondblclick="handleDoubleClick('cos^-1(')" onclick="handleSingleClick('cos(')"
+                    class="smallButton">
+                    cos
+                </button>
+                <button ondblclick="handleDoubleClick('tan^-1(')" onclick="handleSingleClick('tan(')"
+                    class="smallButton">
+                    tan
+                </button>
+            </div>
+
+            <p class="a">
+                simul
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                i
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                [
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                ]
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                !
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                det
+            </p>
+
+            <div>
+                <button onclick=" storeSomething(expression)" class="smallButton">
+                    sto
+                </button>
+
+                <button ondblclick="handleDoubleClick('i')" onclick="handleSingleClick(',')"
+                    class="smallButton">,</button>
+
+                <button ondblclick="handleDoubleClick('[')" onclick="handleSingleClick('(')" class="smallButton">
+                    (
+                </button>
+
+
+
+                <button ondblclick="handleDoubleClick(']')" onclick="handleSingleClick(')')" class="smallButton">
+                    )
+                </button>
+
+
+                <button ondblclick="handleDoubleClick('!')" onclick="handleSingleClick('C')" class="smallButton">
+                    C
+                </button>
+
+
+                <button ondblclick="handleDoubleClick('determinant(')" onclick="handleSingleClick('D')"
+                    class="smallButton">
+                    D
+                </button>
+            </div>
+
+            <p class="a">
+                &nbsp;
+            </p>
+
+            <div>
+                <button onclick=" writeInDisplay(7) ">7</button>
+                <button onclick=" writeInDisplay(8) ">8</button>
+                <button onclick=" writeInDisplay(9) ">9</button>
+                <button onclick=" deleteLastCharacter()" class="del-ac">DEL</button>
+                <button onclick=" clearDisplay();" class="del-ac">AC</button>
+
+            </div>
+
+
+
+            <p class="a"> &nbsp; </p>
+
+            <div>
+
+                <button onclick=" writeInDisplay(4) ">4</button>
+                <button onclick=" writeInDisplay(5) ">5</button>
+                <button onclick=" writeInDisplay(6) ">6</button>
+                <button onclick=" writeInDisplay('×') ">×</button>
+                <button onclick=" writeInDisplay('÷') ">÷</button>
+            </div>
+
+            <p class="a"> &nbsp; </p>
+
+            <div>
+                <button onclick=" writeInDisplay(1) ">1</button>
+                <button onclick=" writeInDisplay(2) ">2</button>
+                <button onclick=" writeInDisplay(3) ">3</button>
+                <button onclick=" writeInDisplay('+') ">+</button>
+                <button onclick=" writeInDisplay('-') ">-</button>
+            </div>
+
+            <p class="a">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;π
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;=
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+
+            <div>
+                <button ondblclick="handleDoubleClick('e')" onclick="handleSingleClick(0)">0</button>
+                <button ondblclick="handleDoubleClick('π')" onclick="handleSingleClick('.')">.</button>
+
+                <button ondblclick="handleDoubleClick('=')" onclick="handleSingleClick('×'+10+'^')">
+                    ×10<sup>x</sup>
+                </button>
+
+                <button onclick=" callAns()">Ans</button>
+                <button onclick=" calculateResult() ">=</button>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

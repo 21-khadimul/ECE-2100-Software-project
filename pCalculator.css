@@ -1,0 +1,229 @@
+.d {
+    display: flex;
+
+    justify-content:center;
+    align-items: center;
+    /* height: 100vh; */
+    /* background-color: rgba(30, 29, 29, 0.943); */
+    background-color: white;
+
+    border-radius: 4px;
+    margin-top: ;
+
+}
+.calculator-body{
+  background-color: rgba(30, 29, 29, 0.943);
+  width: 245px;
+  border-radius: 4px;
+  margin-block: auto;
+  margin-right: 4rem;
+    /* height: 490px; */
+}
+
+.div2 {
+    margin: 10px;
+}
+
+.nameSlot {
+    width: 50%;
+    height: 5%;
+}
+
+.modeShow {
+
+    height: 30px;
+    width: 85%;
+    margin-left: 50px;
+    margin-top: -300px;
+    margin-bottom: 10px;
+    position: relative;
+    border-color: rgba(38, 36, 53, 0.903);
+    background-color: white;
+    border-radius: 5px;
+}
+
+button {
+    width: 39px;
+    height: 20px;
+    margin: 1px;
+    vertical-align: middle;
+    font-weight: ;
+
+}
+
+.townhall {
+    height: 60px;
+    width: 67px;
+    margin-bottom: 0px;
+    border-radius: 45%;
+
+    margin-right: 3.76px;
+
+    background-image: url('p-praph-pic.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.r2 {
+    margin-bottom: 20px;
+
+}
+
+.r2-2 {
+    width: 80px;
+}
+
+.modeB {
+    border-radius: 15px;
+    /* height: 50px; */
+    width: 23px;
+    margin-right: 10px;
+    padding-left: 4.5px;
+    cursor: pointer;
+    /* margin-bottom: -27px; */
+}
+
+.a {
+    margin: 0;
+    color: rgb(137, 92, 94);
+    font-size: small;
+}
+
+.b {
+    border: solid 1px;
+    border-color: rgba(38, 36, 53, 0.903) !important;
+    border-width: 6px;
+    height: 20px;
+    width: 212px;
+    margin-bottom: 20px;
+    background-color: white;
+    color: black;
+    margin-top: 0px;
+    border-radius: 5px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    margin-left: -2.5px;
+    margin-top: 21px;
+
+}
+
+.smallButton {
+    width: 30px;
+    height: 19px;
+    margin-right: 1.7px;
+    margin-left: 1.7px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 11px;
+    margin-top: 0px;
+
+
+}
+
+.test {
+    padding-left: 0;
+
+}
+
+.del-ac {
+    background-color: blue;
+    border: none;
+    border-radius: 2px;
+    color: white;
+}
+
+.michroma-regular {
+    font-family: "Michroma", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    margin-bottom: 0;
+    height: 10px;
+    margin-left: 9px;
+    margin-top: px;
+
+}
+
+#plot-container {
+    display: none;
+    /* Hidden initially */
+    /* width: 40%; */
+    width: 36rem;
+    height: 36rem;
+    /* Ensure height is set */
+    margin: auto;
+    text-align: center;
+    position: relative;
+    /* Makes percentage-based children relative to it */
+}
+
+#plot {
+    width: 100%;
+    /* Match the width of #plot-container */
+    height: 100%;
+    /* Match the height of #plot-container */
+    background-color: #f9f9f9;
+    /* Optional: background color */
+}
+
+.grapgButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+
+    width: 20%;
+    /* 20% of #plot-container's width */
+    height: 5%;
+    /* 5% of #plot-container's height */
+    position: relative;
+    /* Ensures it is positioned relative to #plot-container */
+}
+
+.grapgButton:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+.grapgButton:active {
+    transform: scale(0.95);
+    /* Slightly shrink button on click */
+}
+
+#clearBtn {
+    background-color: #007bff;
+    /* Red color to indicate closing */
+    color: white;
+    /* White text */
+    border: none;
+    width: 40px;
+    /* Small size */
+    height: 40px;
+    /* Make it a circle */
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    /* Makes it a perfect circle */
+    transition: background-color 0.3s, transform 0.2s;
+    display: none;
+    /* Initially hidden */
+    text-align: center;
+    line-height: 40px;
+    /* Centers text vertically */
+}
+
+#clearBtn:hover {
+    background-color: #c82333;
+    /* Darker red on hover */
+}
+
+#clearBtn:active {
+    transform: scale(0.9);
+    /* Slight shrink effect on click */
+}
